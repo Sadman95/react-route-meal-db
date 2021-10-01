@@ -12,6 +12,13 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useHistory, useParams } from "react-router";
 
+const tableStyle = { maxWidth: 650, 
+                    border: "1px solid lightgrey",
+                    borderRadius: 5, 
+                    margin: "auto",
+                    backgroundColor: 'black'}
+
+
 const MealDetail = () => {
   const history = useHistory();
   const goBack = () => {
@@ -28,9 +35,9 @@ const MealDetail = () => {
   },);
 
   return (
-    <TableContainer sx={{ marginTop: 3 }}>
+    <TableContainer sx={{ margin: '16px 0' }}>
       <Table
-        sx={{ maxWidth: 650, border: "1px solid lightgrey", margin: "auto" }}
+        sx={tableStyle}
         aria-label="simple table"
       >
         <TableHead>
@@ -53,28 +60,28 @@ const MealDetail = () => {
           {meal.map((detail) => (
             <>
               <TableRow>
-                <TableCell sx={{color: 'springgreen'}} align="center">{detail.strIngredient1}</TableCell>
-                <TableCell sx={{color: 'springgreen'}} align="center">{detail.strMeasure1}</TableCell>
+                <TableCell sx={{color: 'lightgrey'}} align="center">{detail.strIngredient1}</TableCell>
+                <TableCell sx={{color: 'lightgrey'}} align="center">{detail.strMeasure1}</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell sx={{color: 'springgreen'}} align="center">{detail.strIngredient2}</TableCell>
-                <TableCell sx={{color: 'springgreen'}} align="center">{detail.strMeasure2}</TableCell>
+                <TableCell sx={{color: 'lightgrey'}} align="center">{detail.strIngredient2}</TableCell>
+                <TableCell sx={{color: 'lightgrey'}} align="center">{detail.strMeasure2}</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell sx={{color: 'springgreen'}} align="center">{detail.strIngredient3}</TableCell>
-                <TableCell sx={{color: 'springgreen'}} align="center">{detail.strMeasure3}</TableCell>
+                <TableCell sx={{color: 'lightgrey'}} align="center">{detail.strIngredient3}</TableCell>
+                <TableCell sx={{color: 'lightgrey'}} align="center">{detail.strMeasure3}</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell sx={{color: 'springgreen'}} align="center">{detail.strIngredient4}</TableCell>
-                <TableCell sx={{color: 'springgreen'}} align="center">{detail.strMeasure4}</TableCell>
+                <TableCell sx={{color: 'lightgrey'}} align="center">{detail.strIngredient4}</TableCell>
+                <TableCell sx={{color: 'lightgrey'}} align="center">{detail.strMeasure4}</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell sx={{color: 'springgreen'}} align="center">{detail.strIngredient5}</TableCell>
-                <TableCell sx={{color: 'springgreen'}} align="center">{detail.strMeasure5}</TableCell>
+                <TableCell sx={{color: 'lightgrey'}} align="center">{detail.strIngredient5}</TableCell>
+                <TableCell sx={{color: 'lightgrey'}} align="center">{detail.strMeasure5}</TableCell>
               </TableRow>
-              <TableRow sx={{color: 'springgreen'}}>
+              <TableRow sx={{color: 'lightgrey'}}>
                   <h3>Instructions:</h3>
-                  <TableCell sx={{color: 'springgreen'}} align="left">
+                  <TableCell sx={{color: 'lightgrey'}} align="left">
                       {detail.strInstructions}
                   </TableCell>
               </TableRow>
