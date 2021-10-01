@@ -3,10 +3,23 @@ import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Meals from "../Meals/Meals";
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 
 const Restaurants = () => {
 
-    const linkStyle = {display:'block',marginRight:10,color:"white",textAlign: 'right', textDecoration:"none",fontSize:22};
+    const arrowLink = {
+      color:"white",
+      textDecoration:"none",
+      };
+    
+    const arrowBox = {display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '2rem',
+    height: '2rem',
+    border:'1px solid white',
+    borderRadius: '50%',
+    marginTop: -7}
 
   const [searchText, setSearchtext] = useState('');
   const displayMeals = e =>{
@@ -23,7 +36,11 @@ const Restaurants = () => {
 
   return (
     <>
-    
+      <Box sx={arrowBox}>
+      <Link style={arrowLink} to='/'>
+       <KeyboardArrowLeftIcon></KeyboardArrowLeftIcon>
+      </Link>
+      </Box>
       <Box
         sx={{
           backgroundColor: 'snow',
@@ -34,6 +51,7 @@ const Restaurants = () => {
           maxWidth: "100%",
         }}
       >
+       
         <TextField onChange={displayMeals} fullWidth label="Search meals here" id="fullWidth" />
       </Box>
 
@@ -50,8 +68,7 @@ const Restaurants = () => {
           ))}
         </Grid>
       </Box>
-      <Link style={linkStyle} to='/'>
-        Back</Link>
+      
     </>
   );
 };
