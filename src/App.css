@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+body{
+  background: url(./images/banner.jpg) left top no-repeat;
+  background-size: cover;
+}
